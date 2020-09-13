@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "182788656846",
+    "firebase_url": "https://pneck-app.firebaseio.com",
+    "project_id": "pneck-app",
+    "storage_bucket": "pneck-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182788656846:android:933b7ee580da5f5641ca9f",
+        "android_client_info": {
+          "package_name": "com.callpneck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182788656846-btceh6jioc0vmvh1f9r71oarn1q42ge1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyFn8kQ2D5VRPsW-pMwrrCBG3RuaTK9RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182788656846-btceh6jioc0vmvh1f9r71oarn1q42ge1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182788656846:android:a881ad2efd57a3d741ca9f",
+        "android_client_info": {
+          "package_name": "com.pneck.employee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182788656846-btceh6jioc0vmvh1f9r71oarn1q42ge1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyFn8kQ2D5VRPsW-pMwrrCBG3RuaTK9RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182788656846-btceh6jioc0vmvh1f9r71oarn1q42ge1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

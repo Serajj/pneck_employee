@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_5"
+    tools:context=".ChooseType">
+
+
+    <Button
+        android:id="@+id/btn_driver"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Proceed as Cab Driver"
+        android:background="@drawable/btn_background"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_delivery_boy"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Proceed as Delivery Boy"
+        android:background="@drawable/btn_background"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_driver"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/btn_driver"
+        app:layout_constraintTop_toBottomOf="@+id/btn_driver"
+        app:layout_constraintVertical_bias="0.085" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:text="COLLECT ORDER DETAIL"
+                android:id="@+id/title"
+                android:layout_marginTop="24dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/top"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/ic_phone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:text="1455461244"
+                    android:id="@+id/customer_no"
+                    android:textColor="@color/grey_600"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:text="User Name"
+                    android:id="@+id/customer_name"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/COLLECT_USER_DETAIL"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/grey_800"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/top"
+                android:id="@+id/realtive">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16sp"
+                    android:layout_margin="16sp"
+                    android:padding="8dp"
+                    android:textColor="@color/primary_600"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:id="@+id/done_button"
+                    android:text="@string/DONE"/>
+
+                <EditText
+                    android:id="@+id/edit_job_message"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/done_button"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    android:scrollbars="vertical"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:gravity="top"
+                    android:hint="@string/EDIT_TEXT"
+                    android:padding="16dp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_rounded_primary"
+        android:text="@string/SUBMIT_JOB_DETAIL"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:paddingRight="36dp"
+        android:paddingLeft="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/submit_job_detail_btn"
+        android:textColor="@android:color/white" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

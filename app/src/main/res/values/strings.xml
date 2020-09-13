@@ -1,0 +1,74 @@
+<resources>
+
+    <!--<string name="google_maps_api_key">AIzaSyD-pLZgQogilKE10He6qjR1yQEBmvwuFE4</string>-->
+    <string name="google_maps_api_key">AIzaSyByGoG67zascxLq5z-C930zZPS2ZqFivbs</string>
+
+
+    <string name="app_name">Pneckemployee</string>
+    <string name="YOU_HAVE_RECIEVED_OTP">You have recieved otp in your number</string>
+    <string name="SOMETHING_WENT_WRONG">Something went wrong please try again.</string>
+    <string name="ENTER_YOUR_REGISTERED_MOBILE">Enter your registered mobile number</string>
+
+
+    <string name="START_SERVICE">START SERVICE</string>
+    <string name="PERMISSION_SNACK_BAR_MESSAGE">Please give permission to start service.</string>
+    <string name="ENABLE">ENABLE</string>
+    <string name="CHECK_YOUR_INTERNET_CONNECTION">Please check your connection</string>
+    <string name="CONFIRM_OTP">CONFIRM OTP</string>
+    <string name="CALL_USER_TO_ASK_OTP">Call user to ask for OTP and continue.</string>
+    <string name="DRIVING_LICENCE_NUM">DRIVING LICENCE NUMBER</string>
+    <string name="ENTER_CORRECT_DRIVING_LICENCE_NUM">Please enter correct driving licence number</string>
+    <string name="COLLECT_USER_DETAIL">Collect user detail for the current order and put in edit text separated by commas.</string>
+    <string name="EDIT_TEXT">Type order details separated by commas...</string>
+    <string name="SUBMIT_JOB_DETAIL">SUBMIT JOB DETAILS</string>
+    <string name="VERIFY_AND_COMPLETE_ORDER">VERIFY AND COMPLETE ORDER</string>
+    <string name="VERIFY_OTP_COMPLETE_ORDER">Verify OTP and complete order</string>
+    <string name="ASK_USER_FOR_OTP">Ask otp from user to verify successful delivery.</string>
+    <string name="PLEASE_ENTER_CORRECT_OTP">Please enter correct otp</string>
+    <string name="DONE">DONE</string>
+    <string name="ORDER_COMPLETE">ORDER COMPLETE</string>
+    <string name="ORDER_COMPLETED_SUCCESSFULLY">Order completed successfully.</string>
+    <string name="NO_CURRENT_RIDES">No current rides available, enable the service to get new rides.</string>
+    <string name="CURRENT_RIDE">CURRENT RIDE</string>
+    <string name="NAVIGATE_DIRECTION">NAVIGATE DIRECTION</string>
+    <string name="SUBMIT">SUBMIT</string>
+    <string name="ENTER_AMOUNT">Enter Amount</string>
+    <string name="ENTER_ORDER_AMOUNT">Enter Order Amount</string>
+    <string name="ENTER_TOTAL_BILLING_AMOUNT">Enter total biling amount.</string>
+    <string name="YOU_ARE_IN_MIDDLE_OF_PROCESS">You are in the middle of process.</string>
+    <string name="crash_toast_text">Something went wrong</string>
+    <string name="GENDER">GENDER</string>
+    <string name="ADDRESS_TEXT">ADDRESS</string>
+    <string name="KEEP_WRITING">STAY IN PAGE</string>
+    <string name="EXIT">EXIT</string>
+    <string name="BACK_PRESS_ALERT_MESSAGE">Are you sure to exit from screen without accepting the order?</string>
+    <string name="COLLECT_THE_MONEY">Collect The Money</string>
+    <string name="CALLECT_TOTAL_BILING_AMOUNT">Collect total biling amount</string>
+    <string name="CHECK">CHECK</string>
+    <string name="SUPPORT_MESSAGE">Please drop your concern to support@pneck.in, we will resolve it as soon as possible because we love to help you.</string>
+    <string name="founder_name">Badal Hashmi</string>
+    <string name="company">Pneck Pvt ltd</string>
+    <string name="ABOUT_US">Pneck pvt ltd is established for given Manpower and Temporary Employee for one time.  who provide best Service for Consumers. Pneck motive is that provide better and best service to anyone,Anywhere and any time. it is not only a Company. it is a thought to get ride of those problems   which we face in our daily busy life .</string>
+
+    <string name="HELP">HELP</string>
+    <string name="PNECK_PRIVACY">Pneck Privacy Policy</string>
+    <string name="ABOUT_US_TEXT">ABOUT US</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="RATE">RATE</string>
+    <string name="HOW_IS_EXPERIENCE">How is you experience?</string>
+    <string name="FEEDBACK">FEEDBACK</string>
+    <string name="FEEDBACK_SUBMITED_SUCCESS">Your feedback is submitted successfully</string>
+    <string name="TRACK_ORDER">OPEN</string>
+    <string name="ORDER_NOT_FOUND">No rides is available</string>
+    <string name="IMAGE_UPDATED_SUCCESSFULLY">Image updated successfully</string>
+    <string name="RESEND_OTP">RESEND OTP</string>
+    <string name="YOU_HAVE_BLOCKED">You have blocked for 2 mintues.</string>
+    <string name="default_notification_channel_id">employee_pneckapp_notification_3iuy43</string>
+    <string name="message_notification_group">Employee notification group</string>
+    <string name="PNECK_TAG_LINE">Your service is our ambition</string>
+    <string name="TERM_OF_USE">Term of use</string>
+    <string name="PNECK_SUPPORT_EMAIL">Callpneck@gmail.com</string>
+    <string name="PNECK_SUPPORT_NUMBER">7500066331</string>
+
+    <string name="Driver_Dashboard">Driver\'s Dashboard</string>
+</resources>

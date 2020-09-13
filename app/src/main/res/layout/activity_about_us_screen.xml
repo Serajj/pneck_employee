@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/ic_arrow"
+            android:padding="8dp"
+            android:id="@+id/go_back"
+            android:tint="@color/grey_600"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"
+            android:text="About"
+            android:textColor="@color/grey_600"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:text="P Neck Partner App"
+            android:textColor="@color/grey_800"/>
+        <View
+            android:layout_width="110dp"
+            android:layout_height="3dp"
+            android:background="@color/primary_600"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/grey_500"
+            android:layout_centerVertical="true"
+            android:text="Founder"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/grey_800"
+            android:layout_centerVertical="true"
+            android:text="@string/founder_name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/grey_500"
+            android:layout_centerVertical="true"
+            android:text="Company"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/grey_800"
+            android:layout_centerVertical="true"
+            android:text="@string/company"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/grey_800"
+            android:layout_marginTop="24dp"
+            android:layout_centerVertical="true"
+            android:text="@string/ABOUT_US"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10dp"
+            android:id="@+id/privacy_policy"
+            android:paddingBottom="10dp"
+            android:paddingRight="@dimen/denim_20"
+            android:textColor="@color/primary_600"
+            android:layout_centerVertical="true"
+            android:text="@string/PNECK_PRIVACY"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="@dimen/editpad5dp"
+            android:paddingTop="10dp"
+            android:id="@+id/term_of_use"
+            android:paddingBottom="10dp"
+            android:paddingRight="@dimen/denim_20"
+            android:textColor="@color/primary_600"
+            android:layout_centerVertical="true"
+            android:text="@string/TERM_OF_USE"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

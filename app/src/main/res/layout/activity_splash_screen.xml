@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_graned"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pneck_employee_icon"
+        android:layout_centerInParent="true"
+        android:id="@+id/icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pneck"
+        android:textColor="#ffff"
+        android:layout_below="@+id/icon"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:id="@+id/title"
+        android:layout_centerInParent="true"
+        android:alpha=".8"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:textSize="16sp"
+        android:typeface="serif"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:text="@string/PNECK_TAG_LINE"/>
+
+</RelativeLayout>

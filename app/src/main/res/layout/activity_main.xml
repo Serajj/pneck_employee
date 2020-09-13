@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:elevation="3dp"
+        android:id="@+id/toolbar"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Pneck"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/primary_600"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/start_service"
+            android:textColor="@color/grey_800"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/START_SERVICE"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/feed_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:id="@+id/main_layout"
+
+            android:orientation="vertical">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_10" />
+
+            <LinearLayout
+                android:id="@+id/nested_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:scrollingCache="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_middle">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/spacing_middle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/spacing_middle"
+                        android:text="Pneck Partner"
+                        android:visibility="gone"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/grey_90"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_middle"
+                            android:text="Partner Name"
+                            android:id="@+id/pneck_partner_name"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/grey_80"
+                            android:textStyle="bold" />
+
+                        <!--<ProgressBar
+                            android:layout_width="16dp"
+                            android:layout_height="16sp"
+                            android:layout_marginRight="@dimen/editpad5dp"
+                            android:layout_marginLeft="@dimen/editpad5dp"
+                            android:id="@+id/online_progress"
+                            android:visibility="gone"
+                            />-->
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:id="@+id/online_icon"
+                            app:srcCompat="@drawable/ic_circle"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_middle"
+                            android:text="ONLINE"
+                            android:id="@+id/live_text"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/green"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:id="@+id/offline_case_retoggle"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/editpad5dp"
+                        android:textColor="@color/grey_600"
+                        android:text="You are offline try to re-toggle the switch button"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/grey_5"
+                                app:cardCornerRadius="3dp"
+                                app:cardElevation="0dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:gravity="center"
+                                        android:id="@+id/account"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/spacing_large">
+
+                                        <ImageView
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            android:layout_marginBottom="@dimen/spacing_smlarge"
+                                            android:layout_marginTop="@dimen/spacing_smlarge"
+                                            android:tint="@color/primary_600"
+                                            app:srcCompat="@drawable/ic_account" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="ACCOUNT"
+                                            android:textAlignment="center"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                            android:textColor="@color/grey_90" />
+
+                                    </LinearLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/grey_5"
+                                app:cardCornerRadius="3dp"
+                                app:cardElevation="0dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:gravity="center"
+                                        android:id="@+id/notification"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/spacing_large">
+
+                                        <ImageView
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            android:layout_marginBottom="@dimen/spacing_smlarge"
+                                            android:layout_marginTop="@dimen/spacing_smlarge"
+                                            android:tint="@color/primary_600"
+                                            app:srcCompat="@drawable/ic_help" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/HELP"
+                                            android:textAlignment="center"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                            android:textColor="@color/grey_90" />
+
+                                    </LinearLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <android.support.v7.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/grey_5"
+                                app:cardCornerRadius="3dp"
+                                app:cardElevation="0dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:gravity="center"
+                                        android:id="@+id/wallet"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/spacing_large">
+
+                                        <ImageView
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            android:layout_marginBottom="@dimen/spacing_smlarge"
+                                            android:layout_marginTop="@dimen/spacing_smlarge"
+                                            android:tint="@color/primary_600"
+                                            app:srcCompat="@drawable/ic_wallet" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="WALLET"
+                                            android:textAlignment="center"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                            android:textColor="@color/grey_90" />
+
+                                    </LinearLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </android.support.v7.widget.CardView>
+                            <android.support.v7.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/grey_5"
+                                app:cardCornerRadius="3dp"
+                                app:cardElevation="0dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:gravity="center"
+                                        android:id="@+id/history"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/spacing_large">
+
+                                        <ImageView
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            android:layout_marginBottom="@dimen/spacing_smlarge"
+                                            android:layout_marginTop="@dimen/spacing_smlarge"
+                                            android:tint="@color/primary_600"
+                                            app:srcCompat="@drawable/ic_history" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="MY RIDES"
+                                            android:textAlignment="center"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                            android:textColor="@color/grey_90" />
+
+                                    </LinearLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </android.support.v7.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/grey_5"
+                                app:cardCornerRadius="3dp"
+                                app:cardElevation="0dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:gravity="center"
+                                        android:id="@+id/rides"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/spacing_large">
+
+                                        <ImageView
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            android:layout_marginBottom="@dimen/spacing_smlarge"
+                                            android:layout_marginTop="@dimen/spacing_smlarge"
+                                            android:tint="@color/primary_600"
+                                            app:srcCompat="@drawable/ic_motorcycle" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/CURRENT_RIDE"
+                                            android:textAlignment="center"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                            android:textColor="@color/grey_90" />
+
+                                    </LinearLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <!-- <android.support.v7.widget.CardView
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_margin="@dimen/spacing_small"
+                                 android:layout_weight="1"
+                                 app:cardBackgroundColor="@color/grey_5"
+                                 app:cardCornerRadius="3dp"
+                                 app:cardElevation="0dp">
+
+                                 <com.balysv.materialripple.MaterialRippleLayout
+                                     style="@style/RippleStyleBlack"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content">
+
+                                     <LinearLayout
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:clickable="true"
+                                         android:gravity="center"
+                                         android:orientation="vertical"
+                                         android:padding="@dimen/spacing_large">
+
+                                         <ImageView
+                                             android:layout_width="35dp"
+                                             android:layout_height="35dp"
+                                             android:layout_marginBottom="@dimen/spacing_smlarge"
+                                             android:layout_marginTop="@dimen/spacing_smlarge"
+                                             android:tint="@color/primary_600"
+                                             app:srcCompat="@drawable/ic_live_tv" />
+
+                                         <TextView
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:text="CABLE TV"
+                                             android:textAlignment="center"
+                                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                             android:textColor="@color/grey_90" />
+
+                                     </LinearLayout>
+
+                                 </com.balysv.materialripple.MaterialRippleLayout>
+
+                             </android.support.v7.widget.CardView>
+
+                             <android.support.v7.widget.CardView
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_margin="@dimen/spacing_small"
+                                 android:layout_weight="1"
+                                 app:cardBackgroundColor="@color/grey_5"
+                                 app:cardCornerRadius="3dp"
+                                 app:cardElevation="0dp">
+
+                                 <com.balysv.materialripple.MaterialRippleLayout
+                                     style="@style/RippleStyleBlack"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content">
+
+                                     <LinearLayout
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:clickable="true"
+                                         android:gravity="center"
+                                         android:orientation="vertical"
+                                         android:padding="@dimen/spacing_large">
+
+                                         <ImageView
+                                             android:layout_width="35dp"
+                                             android:layout_height="35dp"
+                                             android:layout_marginBottom="@dimen/spacing_smlarge"
+                                             android:layout_marginTop="@dimen/spacing_smlarge"
+                                             android:tint="@color/primary_600"
+                                             app:srcCompat="@drawable/ic_public" />
+
+                                         <TextView
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:text="INTERNET"
+                                             android:textAlignment="center"
+                                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                             android:textColor="@color/grey_90" />
+
+                                     </LinearLayout>
+
+                                 </com.balysv.materialripple.MaterialRippleLayout>
+
+                             </android.support.v7.widget.CardView>
+             -->
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/spacing_smlarge" />
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resonse"
+        android:layout_margin="24dp"
+        android:layout_above="@+id/log"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/feed_back"
+        android:textStyle="bold"
+        android:textColor="@color/primary_600"
+        android:textSize="16sp"
+        android:background="@color/grey_200"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="32dp"
+        android:paddingLeft="32dp"
+        android:text="@string/FEEDBACK"
+        android:layout_margin="16sp"
+        android:layout_above="@+id/log"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_us"
+        android:textStyle="bold"
+        android:textColor="@color/primary_600"
+        android:textSize="16sp"
+        android:background="@color/grey_200"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="32dp"
+        android:paddingLeft="32dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/ABOUT_US_TEXT"
+        android:layout_margin="16sp"
+        android:layout_above="@+id/log"/>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        app:cardBackgroundColor="@color/grey_3"
+        android:id="@+id/log"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            style="@style/RippleStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:id="@+id/logout"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_large">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:tint="@color/warning_color"
+                    app:srcCompat="@drawable/ic_logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOGOUT"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/warning_color" />
+
+            </LinearLayout>
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/progress_bar"/>
+
+</RelativeLayout>
