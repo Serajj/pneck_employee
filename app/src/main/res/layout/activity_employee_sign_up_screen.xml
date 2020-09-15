@@ -94,7 +94,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -195,6 +194,62 @@
                             android:paddingLeft="25dp"
                             android:singleLine="true"
                             android:textColorHint="@color/grey_40" />
+
+                        <RelativeLayout
+                            android:layout_width="160dp"
+
+                            android:layout_marginTop="@dimen/denim_20"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="center_horizontal"
+                                android:tint="@color/grey_600"
+                                android:id="@+id/user_image"
+                                android:src="@drawable/ic_account_user"/>
+
+                            <RelativeLayout
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginLeft="10dp"
+                                android:elevation="6dp"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/pick_image"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/ic_circle_green"
+                                >
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:tint="@color/white"
+                                    android:layout_centerInParent="true"
+                                    app:srcCompat="@drawable/ic_photo_camera"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            android:id="@+id/btn_image_upload"
+                            style="@style/RippleStyleWhite"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/btn_background">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="UPLOAD"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                android:textColor="@android:color/white" />
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
 
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/dl_number"
