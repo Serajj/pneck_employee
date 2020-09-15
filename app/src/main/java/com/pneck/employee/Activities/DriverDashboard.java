@@ -68,7 +68,7 @@ import static com.pneck.employee.services.LocationService.isOtpcalled;
 
 public class DriverDashboard extends AppCompatActivity {
 
-    /*private static final int REQUEST_CHECK_SETTINGS = 2542;
+    private static final int REQUEST_CHECK_SETTINGS = 2542;
     private SwitchCompat startService;
     private LinearLayout account;
     private LinearLayout notification;
@@ -80,7 +80,7 @@ public class DriverDashboard extends AppCompatActivity {
     private TextView AboutUs;
     private TextView pneckPartnerName;
     private TextView Feedback;
-    private TextView retoggleCase;*/
+    private TextView retoggleCase;
 
     private ProgressBar progressBar;
     private SessionManager sessionManager;
@@ -88,7 +88,7 @@ public class DriverDashboard extends AppCompatActivity {
 
 
     private void findViews() {
-        /*startService = (SwitchCompat)findViewById( R.id.start_service );
+        startService = (SwitchCompat)findViewById( R.id.start_service );
         account = (LinearLayout)findViewById( R.id.account );
         notification = (LinearLayout)findViewById( R.id.notification );
         history = (LinearLayout)findViewById( R.id.history );
@@ -99,7 +99,7 @@ public class DriverDashboard extends AppCompatActivity {
         OrderResponse=findViewById(R.id.resonse);
         AboutUs=findViewById(R.id.about_us);
         Feedback=findViewById(R.id.feed_back);
-        retoggleCase=findViewById(R.id.offline_case_retoggle);*/
+        retoggleCase=findViewById(R.id.offline_case_retoggle);
         //onlineProgressBar=findViewById(R.id.online_progress);
 
         Logout=findViewById(R.id.logout);
@@ -124,18 +124,18 @@ public class DriverDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_driver_dashboard);
         findViews();
         switchChangeListeners();
-        /*clickListeners();
+        clickListeners();
 
         liveText.setText("OFFLINE");
         liveText.setTextColor(0xFF757575);
         onlineIcon.setImageResource(R.drawable.ic_circle);
-        retoggleCase.setVisibility(View.VISIBLE);*/
+        retoggleCase.setVisibility(View.VISIBLE);
 
         sessionManager=new SessionManager(DriverDashboard.this);
 
-        //pneckPartnerName.setText(sessionManager.getUserFirstName()+" "+sessionManager.getUserLastName());
+        pneckPartnerName.setText(sessionManager.getUserFirstName()+" "+sessionManager.getUserLastName());
 
-        //OrderResponse.setVisibility(View.GONE);
+        OrderResponse.setVisibility(View.GONE);
 
     }
 
@@ -143,20 +143,20 @@ public class DriverDashboard extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //startService.setChecked(false);
+        startService.setChecked(false);
         Log.e("kdfhjksf"," on resume calling");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Log.e("kdfhjksf","this is postDelayed on resume ");
                 if (sessionManager.isServiceStarted()){
-                    /*startService.setChecked(true);
+                    startService.setChecked(true);
                     if (checkPermission()){
                         Log.e("kdfhjksf","this is calling on resume ");
                         settingsrequest();
                     }else {
                         askForPermission();
-                    }*/
+                    }
                 }else {
                     //startService.setChecked(false);
                 }
@@ -167,7 +167,7 @@ public class DriverDashboard extends AppCompatActivity {
     }
 
     private void updateText() {
-        /*Timer timer = new Timer();
+        Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
                                       @Override
                                       public void run() {
@@ -190,7 +190,7 @@ public class DriverDashboard extends AppCompatActivity {
                                           });
                                       }
                                   },
-                0, 3000);*/
+                0, 3000);
 
 
         TextView tvUserType = findViewById(R.id.tv_dashboard_type);
@@ -198,7 +198,7 @@ public class DriverDashboard extends AppCompatActivity {
         tvUserType.setText(getString(R.string.Driver_Dashboard));
     }
 
-    /*private void checkResponse() {
+    private void checkResponse() {
         try {
             Log.e("skdfsdfssfsd","this is response "+completeResponseData);
             //bookingId.setText(sessionManager.getCurrentBookingOrderId());
@@ -248,9 +248,9 @@ public class DriverDashboard extends AppCompatActivity {
             Log.e("kdfjkddss","this is error "+e.getMessage());
         }
 
-    }*/
+    }
 
-    /*private void clickListeners() {
+    private void clickListeners() {
 
         Feedback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -295,11 +295,11 @@ public class DriverDashboard extends AppCompatActivity {
                 }else {
                     Toast.makeText(DriverDashboard.this,getString(R.string.NO_CURRENT_RIDES),Toast.LENGTH_SHORT).show();
                 }
-                //
+
                 //LaunchActivityClass.LaunchEmployeeRidesScreen(MainActivity.this);
             }
         });
-    }*/
+    }
 
     private void switchChangeListeners(){
 
@@ -315,7 +315,7 @@ public class DriverDashboard extends AppCompatActivity {
             }
         });
 
-        /*startService.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        startService.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Log.e("sjhfsjkfsfsf","location switch service is clicked "+isChecked);
@@ -356,10 +356,10 @@ public class DriverDashboard extends AppCompatActivity {
                     completeResponseData="";
                 }
             }
-        });*/
+        });
     }
 
-    /*private void employeeServiceToggle(boolean istrue) {
+    private void employeeServiceToggle(boolean istrue) {
 
         String ServerURL = getResources().getString(R.string.pneck_app_url) + "/serviceToggle";
         HashMap<String, String> dataParams = new HashMap<String, String>();
@@ -387,10 +387,10 @@ public class DriverDashboard extends AppCompatActivity {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Volley.newRequestQueue(DriverDashboard.this).add(dataParamsJsonReq);
-    }*/
+    }
 
 
-    /*private Response.Listener<JSONObject> serviceToggle() {
+    private Response.Listener<JSONObject> serviceToggle() {
         return new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -411,7 +411,7 @@ public class DriverDashboard extends AppCompatActivity {
                 }
             }
         };
-    }*/
+    }
 
 
     private void logOutEmployee() {
@@ -476,7 +476,7 @@ public class DriverDashboard extends AppCompatActivity {
         };
     }
 
-    /*private boolean checkPermission() {
+    private boolean checkPermission() {
         if (Build.VERSION.SDK_INT >= 23) {
             if (ContextCompat
                     .checkSelfPermission(DriverDashboard.this,
@@ -493,9 +493,9 @@ public class DriverDashboard extends AppCompatActivity {
         }else {
             return true;
         }
-    }*/
+    }
 
-    /*public void askForPermission(){
+    public void askForPermission(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
             if (ContextCompat
@@ -543,11 +543,10 @@ public class DriverDashboard extends AppCompatActivity {
                 settingsrequest();
             }
         }
-    }*/
+    }
 
-    /*@Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
         switch (requestCode) {
             case PERMISSIONS_REQUEST_TOKEN:
                 if (grantResults.length> 0) {
@@ -559,11 +558,11 @@ public class DriverDashboard extends AppCompatActivity {
                         if (InternetConnection.checkConnection(DriverDashboard.this)){
 
                             settingsrequest();
-                            *//*if (GPSstatusCheck()){
+                            if (GPSstatusCheck()){
                                 startLocationService();
                             }else {
 
-                            }*//*
+                            }
                         }else {
                             PublicMethod.showSnackBar(DriverDashboard.this,getString(R.string.CHECK_YOUR_INTERNET_CONNECTION));
                             // NetConnectionSnackBar();
@@ -575,7 +574,7 @@ public class DriverDashboard extends AppCompatActivity {
                 }
                 break;
         }
-    }*/
+    }
 
 
     public boolean GPSstatusCheck() {
@@ -591,7 +590,7 @@ public class DriverDashboard extends AppCompatActivity {
 
 
 
-    /*private String TAG="deliverymainfksfdsf";
+    private String TAG="deliverymainfksfdsf";
 
     private SettingsClient mSettingsClient;
     private LocationRequest mLocationRequest;
@@ -715,6 +714,6 @@ public class DriverDashboard extends AppCompatActivity {
         }
         Log.d("kjfsfsfdf", "isLocationServiceRunning: location service is not running.");
         return false;
-    }*/
+    }
 
 }
