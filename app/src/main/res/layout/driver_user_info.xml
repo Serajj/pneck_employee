@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_account_user"
+            android:id="@+id/user_image"
+            tools:ignore="VectorDrawableCompat" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:id="@+id/user_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toRightOf="@id/user_image"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Picked"
+            android:layout_margin="3dp"
+            android:layout_alignParentRight="true"
+            android:background="#FF0000"
+            android:textColor="@color/white"
+            android:id="@+id/picked_btn"/>
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/user_image"
+            android:layout_below="@id/user_name"
+            android:layout_marginStart="2dp"
+            android:isIndicator="true"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/call_user_btn"
+            android:text="Call 9123456789"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:drawableLeft="@drawable/ic_phone_white"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimary"/>
+    </RelativeLayout>
+
+</LinearLayout>

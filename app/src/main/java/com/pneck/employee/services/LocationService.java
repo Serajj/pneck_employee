@@ -59,7 +59,7 @@ public class LocationService extends Service {
 
     public static String errorData = "No Error";
     public static String completeResponseData = "";
-    private static final String TAG = "emplocationservice";
+    private static final String TAG = "Seraj";
     private LocationRequest mLocationRequest;
 
     private FusedLocationProviderClient mFusedLocationClient;
@@ -78,23 +78,23 @@ public class LocationService extends Service {
 
             final Location location = locationResult.getLastLocation();
 
-            Log.e("jsklsdsdf", "location service call back IsStopped = " + IsStopped);
+            Log.d("Seraj", "the location service call back IsStopped = " + IsStopped);
 
-            Log.e("kdksadadkasd", "location is not stopped ");
+            Log.d("Seraj", "location is not stopped ");
             if (!IsStopped) {
-                Log.e("kdksadadkasd", "location is not stopped ");
+                Log.d("Seraj", "location is not stopped ");
                 if (location != null) {
-                    Log.e("kdksadadkasd", "location is not null " + LastKnownLatitude);
+                    Log.d("Seraj", "location is not null " + LastKnownLatitude);
                     LastKnownLatitude = location.getLatitude();
                     LastKnownLongitude = location.getLongitude();
                     saveUserLocation(location.getLatitude(), location.getLongitude());
-                    Log.e("kdksadadkasd", "location LastKnownLatitude " + LastKnownLatitude);
+                    Log.d("Seraj", "location LastKnownLatitude " + LastKnownLatitude);
                 } else {
                     startOtherLocation();
-                    Log.e("kdksadadkasd", "location is null ");
+                    Log.d("Seraj", "location is null ");
                 }
             } else {
-                Log.d("kdksadadkasd", "stopping fused location api");
+                Log.d("Seraj", "stopping fused location api");
                 if (mFusedLocationClient != null) {
                     mFusedLocationClient.removeLocationUpdates(mLocationCallback);
                 }
@@ -173,7 +173,7 @@ public class LocationService extends Service {
     private boolean IsArreadyRunnig=false;
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d("jsklsdsdf", "onStartCommand: called.");
+        Log.d("Seraj", "onStartCommand: called.");
         if (!IsArreadyRunnig){
             if (intent.getBooleanExtra("is_stop",true)){
                 this.stopSelf();
@@ -211,7 +211,7 @@ public class LocationService extends Service {
                 isOtpcalled=false;
             }
         }
-        Log.d("jsklsdsdf", "onStartCommand: called. "+IsStopped);
+        Log.d("Seraj", "onStartCommand: called. "+IsStopped);
         return START_NOT_STICKY;
     }
 
@@ -224,7 +224,7 @@ public class LocationService extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent){
-        Log.e("data_response","onTaskRemoved is called ");
+        Log.d("data_response","onTaskRemoved is called ");
 
         Intent restartServiceIntent = new Intent(getApplicationContext(), this.getClass());
 
@@ -269,9 +269,9 @@ public class LocationService extends Service {
         /*dataParams.put("curr_lat","28.6411469");
         dataParams.put("curr_long","77.359123");*/
 
-        Log.e("employee_current_job", "this is url " +ServerURL);
+        Log.d("Seraj", "this is url " +ServerURL);
 
-        Log.e("employee_current_job", "this is we sending " + dataParams.toString());
+        Log.d("Seraj", "this is we sending " + dataParams.toString());
 
         CustomRequest dataParamsJsonReq = new CustomRequest(JsonUTF8Request.Method.POST,
                 ServerURL,
@@ -292,7 +292,7 @@ public class LocationService extends Service {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Log.v("employee_current_job", "this is complete response " + response);
+                    Log.d("Seraj", "this is complete response " + response);
                     completeResponseData=""+response;
                     JSONObject innerResponse=response.getJSONObject("response");
                     if (innerResponse.getBoolean("success")) {
@@ -315,7 +315,7 @@ public class LocationService extends Service {
 
                 } catch (Exception e) {
                     errorData="Error data "+e.getMessage();
-                    Log.v("employee_current_job", "inside catch block  " + e.getMessage());
+                    Log.d("Seraj", "inside catch block  " + e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -328,7 +328,7 @@ public class LocationService extends Service {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
                 errorData="Error data "+error.getMessage();
-                Log.v("employee_current_job", "inside error block  " + error.getMessage());
+                Log.d("Seraj", "inside error block  " + error.getMessage());
             }
         };
     }
@@ -338,7 +338,7 @@ public class LocationService extends Service {
     public void onDestroy() {
         super.onDestroy();
         IsStopped=true;
-        Log.e("jfgdlkfgsdfg","service stopped");
+        Log.d("Seraj","service stopped");
     }
 
 
@@ -354,11 +354,11 @@ public class LocationService extends Service {
 
         if (ActivityCompat.checkSelfPermission(LocationService.this,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Log.d("jsklsdsdf", "getLocation: stopping the location service. return");
+            Log.d("Seraj", "getLocation: stopping the location service. return");
             stopSelf();
             return;
         }
-        Log.d("jsklsdsdf", "getLocation: getting location information. fetching");
+        Log.d("Seraj", "getLocation: getting location information. fetching");
         mFusedLocationClient.requestLocationUpdates(mLocationRequestHighAccuracy, mLocationCallback, myLooper);
 
         mFusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
@@ -368,13 +368,13 @@ public class LocationService extends Service {
                     LastKnownLatitude = location.getLatitude();
                     LastKnownLongitude = location.getLongitude();
                     saveUserLocation(location.getLatitude(), location.getLongitude());
-                    Log.e("jsklsdsdf","location fetch success locatin is "+location.toString());
+                    Log.d("Seraj","location fetch success locatin is "+location.toString());
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.e("jsklsdsdf","location fetch error "+e.getMessage());
+                Log.d("Seraj","location fetch error "+e.getMessage());
             }
         });
 
@@ -405,9 +405,9 @@ public class LocationService extends Service {
         dataParams.put("emp_long","77.359123");*/
         dataParams.put("emp_currentAddress","");
 
-        Log.e("employee_current_locat", "this is url " +ServerURL);
+        Log.d("employee_current_locat", "this is url " +ServerURL);
 
-        Log.e("employee_current_locat", "this is we sending " + dataParams.toString());
+        Log.d("employee_current_locat", "this is we sending " + dataParams.toString());
 
         CustomRequest dataParamsJsonReq = new CustomRequest(JsonUTF8Request.Method.POST,
                 ServerURL,
@@ -427,14 +427,14 @@ public class LocationService extends Service {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Log.v("employee_current_locat", "this is complete response " + response);
+                    Log.d("employee_current_locat", "this is complete response " + response);
                     JSONObject innerResponse=response.getJSONObject("response");
                     if (innerResponse.getBoolean("success")) {
 
                     }
 
                 } catch (Exception e) {
-                    Log.v("employee_current_locat", "inside catch block  " + e.getMessage());
+                    Log.d("employee_current_locat", "inside catch block  " + e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -446,7 +446,7 @@ public class LocationService extends Service {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Log.v("employee_current_locat", "inside error block  " + error.getMessage());
+                Log.d("employee_current_locat", "inside error block  " + error.getMessage());
             }
         };
     }

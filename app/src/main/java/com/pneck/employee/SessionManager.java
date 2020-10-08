@@ -39,6 +39,14 @@ public class SessionManager {
     private static final String CURRENT_USER_PROFILE_PIC="current_user_profile_pic";
     private static final String USER_PASSWORD="user_password";
 
+    public void setOtpVerified(boolean b) {
+        editor.putBoolean("OTP_VERIFIED",b);
+        editor.commit();
+    }
+    public boolean getOtpVerified(){
+        return pref.getBoolean("OTP_VERIFIED",false);
+    }
+
     public enum UserType{
         TYPE_DELIVERY,
         TYPE_DRIVER

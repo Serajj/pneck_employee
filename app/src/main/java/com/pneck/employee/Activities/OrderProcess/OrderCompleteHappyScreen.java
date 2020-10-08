@@ -43,6 +43,8 @@ public class OrderCompleteHappyScreen extends AppCompatActivity {
         isOtpcalled=false;
         sessionManager=new SessionManager(OrderCompleteHappyScreen.this);
 
+        sessionManager.setOtpVerified(false);
+
         if (getIntent().hasExtra("booking_order_id"))
             sesBookingId=getIntent().getStringExtra("booking_order_id");
         if (sesBookingId!=null&&sesBookingId.length()>0){

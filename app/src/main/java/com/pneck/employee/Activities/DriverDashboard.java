@@ -143,7 +143,7 @@ public class DriverDashboard extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        startService.setChecked(false);
+      // startService.setChecked(false);
         Log.e("kdfhjksf"," on resume calling");
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -222,8 +222,8 @@ public class DriverDashboard extends AppCompatActivity {
                         bundle.putString("booking_order_number",object.getString("booking_order_number"));
                         bundle.putString("booking_order_id",object.getString("booking_order_id"));
                         bundle.putString("distance_km",object.getString("distance_km"));
-                        bundle.putString("customer_lat",object.getString("user_lat"));
-                        bundle.putString("customer_long",object.getString("user_long"));
+                        bundle.putString("customer_lat",""+object.getString("user_lat"));
+                        bundle.putString("customer_long",""+object.getString("user_long"));
 
                         //completeResponseData="";
                         if (!isOtpcalled&&sessionManager.getCurrentBookingOrderId().length()==0){
@@ -590,7 +590,7 @@ public class DriverDashboard extends AppCompatActivity {
 
 
 
-    private String TAG="deliverymainfksfdsf";
+    private String TAG="Seraj";
 
     private SettingsClient mSettingsClient;
     private LocationRequest mLocationRequest;

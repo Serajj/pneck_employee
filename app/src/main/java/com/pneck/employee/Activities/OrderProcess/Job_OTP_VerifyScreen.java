@@ -73,6 +73,7 @@ public class Job_OTP_VerifyScreen extends AppCompatActivity implements View.OnCl
         findViews();
 
         clickListeners();
+        Toast.makeText(this, "Work otp", Toast.LENGTH_SHORT).show();
         sessionManager=new SessionManager(Job_OTP_VerifyScreen.this);
 
         bookingOrderNumber=getIntent().getStringExtra("booking_order_number");
