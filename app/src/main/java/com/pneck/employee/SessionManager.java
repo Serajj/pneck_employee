@@ -47,6 +47,19 @@ public class SessionManager {
         return pref.getBoolean("OTP_VERIFIED",false);
     }
 
+    public void setDeinationLat(String destinationLat, String destinationLong) {
+        editor.putString("destLat",destinationLat);
+        editor.putString("destLongi",destinationLong);
+        editor.commit();
+    }
+
+    public String getDestinationLatitude(){
+        return pref.getString("destLat","");
+    }
+    public String getDestinationLongitude(){
+        return pref.getString("destLongi","");
+    }
+
     public enum UserType{
         TYPE_DELIVERY,
         TYPE_DRIVER

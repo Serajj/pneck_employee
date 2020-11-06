@@ -79,7 +79,7 @@ dependencies {
     implementation files('libs\\additionnal.jar')
     implementation files('libs\\mail.jar')
 
-    //direction
+
 
 }
 apply plugin: 'com.google.gms.google-services'

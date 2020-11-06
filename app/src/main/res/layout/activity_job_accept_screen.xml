@@ -113,12 +113,14 @@
 
         </LinearLayout>
 
-        <View
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/grey_600"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_height="wrap_content"
+            android:hint="Tap to offer your fare.."
+            android:textSize="13sp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:id="@+id/driver_cash_offer"/>
 
 
 

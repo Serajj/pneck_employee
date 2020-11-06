@@ -9,8 +9,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,8 +58,12 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
     private String currentLatitude="";
     private String currentLongitude="";
     private String customerLat,customerLong;
+    EditText driverCash;
+    String cash;
     ScheduledExecutorService executor,customerAcceptEcecutor;
     Runnable customerAcceptRunneble;
+    int i=0;
+    boolean j=true;
 
 
     private void findViews() {
@@ -69,7 +75,7 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
         userAddress=findViewById(R.id.user_address);
         cashOfferd=findViewById(R.id.cash_offered);
         progressBar=findViewById(R.id.progress_bar);
-
+        driverCash=findViewById(R.id.driver_cash_offer);
         acceptBtn.setOnClickListener( this );
         skipOrder.setOnClickListener( this );
     }
@@ -104,19 +110,14 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
         bookOrderId=getIntent().getStringExtra("booking_order_id");
         customerLat=getIntent().getStringExtra("customer_lat");
         customerLong=getIntent().getStringExtra("customer_long");
-
         bookingOrderId.setText("Order Id : "+bookOrderId);
         bookingOrderDistance.setText("Distance : "+orderDistance+"km away");
         bookingOrderNumber.setText("Order Number : "+OrderNumber);
-
-
         executor = Executors.newSingleThreadScheduledExecutor();
 
         Runnable periodicTask = new Runnable() {
             public void run() {
-                // Invoke method(s) to do the work
                 doPeriodicWork();
-
             }
         };
 
@@ -158,13 +159,13 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
 
 
     //repetative task
-    private void doPeriodicWork() {
+    private void doPeriodicWork()
+    {
         Log.d("Serajc","Counter Working");
 
         String ServerURL = getResources().getString(R.string.pneck_app_url) + "/fetchOfferedCash";
         HashMap<String, String> dataParams = new HashMap<String, String>();
         dataParams.put("booking_id",bookOrderId);
-
         CustomRequest dataParamsJsonReq = new CustomRequest(JsonUTF8Request.Method.POST,
                 ServerURL,
                 dataParams,
@@ -188,15 +189,10 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
                     if (innerResponse.getBoolean("success")) {
 
                         Log.d("Serajcr","cash responce success");
-
-
                         JSONArray jsonArray=innerResponse.getJSONArray("data");
-
                         JSONObject object=jsonArray.getJSONObject(0);
-
                         Log.d("Serajcr",object.getString("cash_offer"));
-
-                        String cash=object.getString("cash_offer");
+                        cash=object.getString("cash_offer");
 
                         if (!cashOfferd.getText().equals(cash)){
                             cashOfferd.setText(cash);
@@ -204,7 +200,6 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
                             Log.d("Serajcv","cash value : "+cash);
                         }
                         Log.d("Serajcv","cash value : "+cash);
-
                     }else {
                         Log.d("Seraj","accept responce failed");
                     }
@@ -221,6 +216,9 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
 
     private void acceptOrder() {
 
+        if (driverCash.getText().toString().isEmpty()){
+            driverCash.setText(cash);
+        }
         Log.d("Seraj","Sending accept request");
         progressBar.setVisibility(View.VISIBLE);
        // String ServerURL = getResources().getString(R.string.pneck_app_url) + "/empBookingAccept";
@@ -239,7 +237,7 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
         dataParams.put("employee_time_to_reach",bookOrderId);
         dataParams.put("description","waiting");
         dataParams.put("status","agree");
-        dataParams.put("employee_cash_offer","200");
+        dataParams.put("employee_cash_offer",""+driverCash.getText().toString());
 
         Log.d("Serad", "this is url " +ServerURL);
 
@@ -545,6 +543,17 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
                         Log.d("Serajcass", "success status : " +status);
                         if (status.equalsIgnoreCase("accept")){
                             CustomerAcceptOrder();
+                            i=0;
+                        }else{
+                            if (j){
+                                i=i+4;
+                            }
+                            if(i==60){
+                                j=false;
+                                cancelexecuters();
+                                Toast.makeText(JobAcceptScreen.this, "Either order cancelled or taken by other..", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
                         }
 
                     }else {
@@ -558,4 +567,11 @@ public class JobAcceptScreen extends AppCompatActivity implements View.OnClickLi
             }
         };
     }
+
+
+
+
+
+
+
 }

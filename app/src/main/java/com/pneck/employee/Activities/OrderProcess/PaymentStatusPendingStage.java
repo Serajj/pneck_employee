@@ -141,7 +141,7 @@ public class PaymentStatusPendingStage extends AppCompatActivity implements View
 
                 } catch (Exception e) {
                     Log.v("payment_status", "inside catch block  " + e.getMessage());
-                    e.printStackTrace();
+                   // e.printStackTrace();
                 }
             }
         };

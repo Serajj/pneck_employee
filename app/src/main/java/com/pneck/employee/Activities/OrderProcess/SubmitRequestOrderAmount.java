@@ -144,7 +144,7 @@ public class SubmitRequestOrderAmount extends AppCompatActivity implements View.
 
                 } catch (Exception e) {
                     Log.v("user_registration", "inside catch block  " + e.getMessage());
-                    e.printStackTrace();
+                  //  e.printStackTrace();
                 }
             }
         };
@@ -154,7 +154,7 @@ public class SubmitRequestOrderAmount extends AppCompatActivity implements View.
         return new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+               // error.printStackTrace();
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(getApplicationContext(), R.string.SOMETHING_WENT_WRONG+error.getMessage(), Toast.LENGTH_LONG).show();
                 Log.v("user_registration", "inside error block  " + error.getMessage());

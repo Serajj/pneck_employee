@@ -43,7 +43,7 @@ public class OrderCompleteHappyScreen extends AppCompatActivity {
         isOtpcalled=false;
         sessionManager=new SessionManager(OrderCompleteHappyScreen.this);
 
-        sessionManager.setOtpVerified(false);
+
 
         if (getIntent().hasExtra("booking_order_id"))
             sesBookingId=getIntent().getStringExtra("booking_order_id");
@@ -53,10 +53,12 @@ public class OrderCompleteHappyScreen extends AppCompatActivity {
             sesBookingId=sessionManager.getCurrentBookingOrderId();
         }
 
-        sessionManager.clearOrderSession();
+
         findViewById(R.id.home_screen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sessionManager.setOtpVerified(false);
+                sessionManager.clearOrderSession();
                 LaunchActivityClass.LaunchMainActivity(OrderCompleteHappyScreen.this);
             }
         });
