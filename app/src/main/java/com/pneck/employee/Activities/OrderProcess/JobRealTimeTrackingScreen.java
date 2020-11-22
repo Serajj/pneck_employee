@@ -84,7 +84,7 @@ public class JobRealTimeTrackingScreen extends AppCompatActivity implements OnMa
         GoogleMap.OnPolylineClickListener,
         LocationListener
 {
-    private static final String TAG ="SerajTrack" ;
+    private static final String TAG ="SerajTrack";
     GoogleMap mGoogleMap;
     SessionManager sessionManager;
     private LatLngBounds mMapBoundary;
